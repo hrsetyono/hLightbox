@@ -2,11 +2,11 @@
 
 A Simple jQuery Lightbox, only 1.73KB gzipped.
 
-> This is a jQuery wrapper of [basicSlider](https://github.com/electerious/basicSlider).
+> This is a jQuery wrapper of [basicSlider](https://github.com/electerious/basicSlider) with some added features.
 
 ## Contents
 
-- [Codepen Demos](https://codepen.io/hrsetyono/pen/aPPEWa)
+- [Codepen Demo](https://codepen.io/hrsetyono/pen/aPPEWa)
 - [Setup](#setup)
 - [Options](#options)
 - [Href Formats](#href-formats)
@@ -81,6 +81,18 @@ The lightbox content is auto-detected from the format of `href` attribute. Here 
 	```html
 	<a href="https://wikipedia.com?width=720&height=480"> Open Wikipedia </a>
 	```
+
+## FAQ
+
+1. > How to add image caption?
+
+  Create a template with image and it's caption.
+
+1. > How to add next / prev arrow?
+
+  Currently this library doesn't support that.
+
+1. > How to 
 
 ## Requirements
 
