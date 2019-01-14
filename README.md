@@ -9,7 +9,7 @@ A Simple jQuery Lightbox, only 1.73KB gzipped.
 - [Codepen Demos](https://codepen.io/hrsetyono/pen/aPPEWa)
 - [Setup](#setup)
 - [Options](#options)
-- [Href Format](#href-format)
+- [Href Formats](#href-formats)
 - [Requirements](#requirements)
 
 ## Setup
@@ -51,17 +51,17 @@ Available options for hSlider are:
 - **onOpen** - Callback before lightbox is being opened. Parameters: `( instance )`.
 - **onClose** - Callback 	before lightbox is being closed. Parameters: `( instance )`.
 
-## Href Format
+## Href Formats
 
 The lightbox content is auto-detected from the format of `href` attribute. Here are the variations:
 
-1. **Image** - If the Href is URL that ends with jpg / jpeg / png / gif / svg.
+1. **IMAGE** - If the Href is URL that ends with jpg / jpeg / png / gif / svg.
 
 	```html
 	<a href="https://mysite.com/cute-cat.jpg"> Click here </a>
 	```
 
-1. **HTML Template** - If the Href is an ID, look for the element with that ID and copy the content.
+1. **HTML TEMPLATE** - If the Href is an ID, look for the element with that ID and copy the content.
 
 	```html
 	<a href="#my-content"> Click here </a>
@@ -69,14 +69,14 @@ The lightbox content is auto-detected from the format of `href` attribute. Here 
 	<template id="my-content">
 	  <article>
 	    <h2>Hello World</h2>
-			<p>Lorem ipsum dolor sit amet</p>
-		</article>
+		  <p>Lorem ipsum dolor sit amet</p>
+	  </article>
 	</template>
 	```
 
 	We recommend using `<template>` tag and adds a single wrapper just like `<article>` above. You will then need to style that wrapper since we only add sizing-related CSS.
 
-1. **Iframe** - If the Href is URL that has `width` and `height` parameters, show it inside iframe with that specified size.
+1. **IFRAME** - If the Href is URL that has `width` and `height` parameters, it will be shown inside iframe with that specified size.
 
 	```html
 	<a href="https://wikipedia.com?width=720&height=480"> Open Wikipedia </a>
