@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- WEBSITE DETAIL -->
+  <title>hLightbox Demo</title>
+  <meta name="theme-color" content="#00aadc">
+  <meta name="description" content="A Simple jQuery Lightbox, only 1.73KB gzipped">
+
+  <!-- STYLESHEET -->
+	<link rel="stylesheet" href="https://cdn.setyono.net/edje/h-normalize.css">
+  <link rel="stylesheet" href="dist/h-lightbox.css">
+
+  <style>
+    main {
+      padding: 0 10px 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 2rem 0;
+    }
+
+    .image-lightbox {
+      display: flex; 
+    }
+    
+
+    article {
+      background-color: white;
+      padding: 1rem;
+      margin: auto;
+      max-width: 640px;
+      font-size: 1.125rem;
+    }
+
+    article * + * {
+      margin-top: 1rem;
+    }
+  </style>
+
+</head>
+<body>
+
+<main>
+
+  <h1>Image Lightboxes</h1>
+  <section class="image-lightbox">
+    <a href="https://picsum.photos/600/450?image=1043">
+      <img src="https://picsum.photos/400/300?image=1043">
+    </a>
+    <a href="https://picsum.photos/600/450?image=1039">
+      <img src="https://picsum.photos/400/300?image=1039">
+    </a>
+    <a href="https://picsum.photos/600/450?image=1044">
+      <img src="https://picsum.photos/400/300?image=1044">
+    </a>
+  </section>
+  
+
+  <h1>HTML Lightboxes</h1>
+  <section>
+    <p>
+      When the href is ID, it will search for &lt;template&gt; tag with that ID and copy the content.
+    </p>
+    <p>
+      <a href="#my-template" data-lightbox>Click here</a> to open the template.
+    </p>
+  </section>
+
+  <template id="my-template">
+    <article>
+      <h2>Hello World</h2>
+      <img src="https://picsum.photos/600/200">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque inventore in.</p>
+      <p>Voluptatum veritatis illo recusandae ex suscipit sunt. Soluta ipsam molestias distinctio quos id accusantium nihil totam cumque ad!</p>
+    </article>
+  </template>
+
+
+  <h1>Iframe Lightboxes</h1>
+  <section>
+    <p>
+      When the href is URL with parameter "width" and "height", it becomes an Iframe Lightbox.
+    </p>
+    <p>
+      <a href="https://pandarin.net?width=720&height=480" data-lightbox>Click here</a> to open the iframe.
+    </p>
+  </section>
+  
+</main>
+
+
+<!-- JAVASCRIPT LIBRARY -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="src/h-lightbox.js"></script>
+<script>
+$(document).ready( function() {
+
+  $('.image-lightbox a').hLightbox({
+    closeButton: true
+  });
+
+  $('[data-lightbox]').hLightbox({
+    closeButton: true
+  });
+
+});
+</script>
+
+</body>
+</html>

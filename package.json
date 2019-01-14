@@ -1,39 +1,29 @@
 {
-  "name": "basiclightbox",
-  "moduleName": "basicLightbox",
-  "version": "5.0.1",
+  "name": "hlightbox",
+  "moduleName": "hLightbox",
+  "version": "2.0.0",
   "authors": [
-    "Tobias Reich <tobias@electerious.com>"
+    "Henner Setyono <henner@setyono.net>"
   ],
-  "description": "The lightest lightbox ever made",
-  "main": "dist/basicLightbox.min.js",
+  "description": "A Simple jQuery Lightbox, only 1.73KB gzipped",
+  "main": "dist/hlightbox.min.js",
   "keywords": [
     "lightbox",
-    "popup",
-    "modal",
-    "window",
-    "dialog",
-    "gallery",
-    "photo",
-    "responsive",
-    "mobile"
+    "popup"
   ],
-  "scripts": {
-    "start": "gulp watch",
-    "compile": "gulp"
-  },
   "license": "MIT",
-  "homepage": "https://basiclightbox.electerious.com",
+  "homepage": "https://github.com/hrsetyono/hLightbox",
   "repository": {
     "type": "git",
-    "url": "https://github.com/electerious/basicLightbox.git"
+    "url": "https://github.com/hrsetyono/hLightbox.git"
   },
   "files": [
     "dist",
     "src"
   ],
-  "devDependencies": {
-    "@electerious/basictasks": "4.0.0",
-    "gulp": "^3.9.1"
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "sass": "FOR /f \"delims=\" %v IN ('node -p \"require('edje').includePaths()[0]\"') DO node-sass -w src -o dist --output-style compressed --include-path \"%v\" "
   }
 }
