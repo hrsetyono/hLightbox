@@ -6,10 +6,11 @@
 
 .hLightbox
   +h( fixed top0 left0 w100 h100vh )
-  +h( bg-black75 transition )
+  +h( bg-black75 )
   opacity: .01
   z-index: 10000
   will-change: opacity
+  transition: opacity .25s ease-in-out
 
   &:not( .hLightbox--unclosable )
     +h( cursor-pointer )
@@ -20,40 +21,38 @@
   +h( o100 )
 
 .hLightbox-content
-  +h( cursor-default d-flex ai-center jc-center maxw100 w100 h100 events-none transition )
-  +transform( scale(0.9) )
+  +h( absolute top50 left50 cursor-default events-all transition )
+  +transform( scale(0.9) translateX(-50%) translateY(-50%) )
   z-index: 1
   will-change: transform
+  max-width: 95%
+  max-height: 95vh
 
   .hLightbox--visible &
-    +transform( scale(1) )
+    +transform( scale(1) translateX(-50%) translateY(-50%) )
 
   > *
-    +h( events-all ovy-auto )
-    max-height: 95%
+    +h( ovy-auto )
+    max-height: 95vh
 
 
 .hLightbox--iframe iframe:first-child,
 .hLightbox--img img:first-child,
 .hLightbox--video video:first-child
-  +h( d-block m-auto bg-white )
-  max-width: 95%
-  max-height: 95%
-
-.hLightbox--img img:first-child,
-.hLightbox--video video:first-child
-  +h( w-auto h-auto )
+  +h( d-block bg-white )
 
 
 .hLightbox-close
-  +h( d-flex ai-center jc-center cursor-pointer absolute events-all )
+  +h( d-flex ai-center jc-center cursor-pointer absolute )
   +h( brad transition )
-  top: 1rem
-  right: 1rem
+  top: 0
+  right: -10px
   height: 3rem
   width: 3rem
   background-color: rgba($red, 0.3)
   font-size: 0
+
+  +transform( translateX(100%) )
 
   &::before
     content: "✕"

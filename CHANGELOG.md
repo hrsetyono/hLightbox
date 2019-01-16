@@ -1,3 +1,7 @@
+## 2.0.1
+
+- Changed the CSS for lightbox container so the close button can be positioned next to the lightbox.
+
 ## 2.0.0
 
 - Forked from basicLightbox.

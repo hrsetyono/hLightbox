@@ -84,15 +84,13 @@ The lightbox content is auto-detected from the format of `href` attribute. Here 
 
 ## FAQ
 
-1. > How to add image caption?
+1. How to add image caption?  
+	
+	Create a template with image and it's caption.
 
-  Create a template with image and it's caption.
+1. How to add next / prev arrow?
 
-1. > How to add next / prev arrow?
-
-  Currently this library doesn't support that.
-
-1. > How to 
+	Currently this library doesn't support that.
 
 ## Requirements
 
