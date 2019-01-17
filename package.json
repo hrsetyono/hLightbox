@@ -3,6 +3,7 @@
   "moduleName": "hLightbox",
   "version": "2.0.1",
   "authors": [
+    "Tobias Reich <tobias@electerious.com>",
     "Henner Setyono <henner@setyono.net>"
   ],
   "description": "A Simple jQuery Lightbox, only 1.73KB gzipped",

@@ -17,14 +17,14 @@ A Simple jQuery Lightbox, only 1.73KB gzipped.
 1. Include the CSS files before `</head>`. Change the path to fit your project directory.
 
 	```html
-	<link rel="stylesheet" href="dist/hlightbox.min.css">
+	<link rel="stylesheet" href="css/h-lightbox.min.css">
 	```
 
-1. Include the JS files before `</body>`. You can ignore the jQuery if you already added it.
+1. Include the JS files before `</body>`. You can ignore the jQuery if you already added it. Also change the path to fit your project directory.
 
 	```html
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="dist/hlightbox.min.js"></script>
+	<script src="js/h-lightbox.min.js"></script>
 	```
 
 1. Apply hLightbox to anchor link. It will read the **href** attribute.
@@ -84,11 +84,11 @@ The lightbox content is auto-detected from the format of `href` attribute. Here 
 
 ## FAQ
 
-1. How to add image caption?  
+1. **How to add image caption?**
 	
-	Create a template with image and it's caption.
+	Create a HTML template with image and it's caption.
 
-1. How to add next / prev arrow?
+1. **How to add next / prev arrow?**
 
 	Currently this library doesn't support that.
 
