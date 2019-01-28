@@ -14,30 +14,32 @@ A Simple jQuery Lightbox, only 1.73KB gzipped.
 
 ## Setup
 
+1. Get the CSS and JS files from `/dist` folder.
+
 1. Include the CSS files before `</head>`. Change the path to fit your project directory.
 
 	```html
-	<link rel="stylesheet" href="css/h-lightbox.min.css">
+	<link rel="stylesheet" href="css/h-lightbox.css">
 	```
 
 1. Include the JS files before `</body>`. You can ignore the jQuery if you already added it. Also change the path to fit your project directory.
 
 	```html
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js/h-lightbox.min.js"></script>
+	<script src="js/h-scroll.min.js"></script>
 	```
 
 1. Apply hLightbox to anchor link. It will read the **href** attribute.
 
 	```html
-	<a href="https://picsum.photos/600/450" data-lightbox>
+	<a href="https://picsum.photos/600/450" class="open-lightbox">
 	  <img src="https://picsum.photos/400/300">
 	</a>
 	```
 
 	```js
-	$('[data-lightbox]').hLightbox({
-		closeButton: true,
+	$('open-lightbox').hLightbox({
+	  closeButton: true,
 	});
 	```
 
