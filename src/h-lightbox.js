@@ -57,7 +57,8 @@ jQuery.fn.extend( {
       }
 
       // if Image create <img> tag
-      if( href.match( imageRegex ) ) {
+      // TODO: Picsum gives base64 image, do a non-hardcoded regex check!
+      if( href.match( imageRegex ) || href.match('picsum.photos') ) {
         return new Promise( (resolve) => {
           resolve( `<img src="${ href }">` );
         });
