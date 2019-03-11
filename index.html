@@ -61,9 +61,6 @@
     </a>
   </section>
 
-
-  
-
   <h1>HTML Lightboxes</h1>
   <section>
     <p>
@@ -98,17 +95,16 @@
 
 
 <!-- JAVASCRIPT LIBRARY -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="src/h-lightbox.js"></script>
 <script>
-$(document).ready( function() {
-  $('.image-lightbox a').hLightbox({
-    closeButton: true
-  });
+document.addEventListener('DOMContentLoaded', () => {
+  hLightbox( document.querySelectorAll('.image-lightbox a'), {
+    closeButton: true,
+  } );
 
-  $('[data-lightbox]').hLightbox({
-    closeButton: true
-  });
+  hLightbox( document.querySelectorAll('[data-lightbox]'), {
+    closeButton: true,
+  } );
 
 });
 </script>

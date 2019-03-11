@@ -1,88 +1,114 @@
 # hLightbox
 
-A Simple jQuery Lightbox, only 1.73KB gzipped.
+A simple and flexible Lightbox / Popup, only 1.7KB gzipped.
 
-> This is a jQuery wrapper of [basicSlider](https://github.com/electerious/basicSlider) with some added features.
+**TABLE OF CONTENTS**
 
-## Contents
-
-- [Codepen Demo](https://codepen.io/hrsetyono/pen/aPPEWa)
-- [Setup](#setup)
-- [Options](#options)
-- [Href Formats](#href-formats)
+- [Demo](#demo)
+- [Features](#features)
+- [How to Use](#how-to-use)
+- [Image Link](#image-link)
+- [Template Link](#template-link)
+- [Iframe Link](#iframe-link)
+- [FAQ](#faq)
+- [jQuery Extension](#jquery-extension)
 - [Requirements](#requirements)
 
-## Setup
+## Demo
 
-1. Get the CSS and JS files from `/dist` folder.
+| Name | Link |
+| --- | --- |
+| Basic Usage | [View in Codepen](https://codepen.io/hrsetyono/pen/aPPEWa) |
 
-1. Include the CSS files before `</head>`. Change the path to fit your project directory.
+## Features
 
-	```html
-	<link rel="stylesheet" href="css/h-lightbox.css">
-	```
+- **Flexible** - Supports any type of content.
+- **Lightweight** - Our script is only 1.7 KB gzipped.
+- **No dependencies** - Just plain old JS.
 
-1. Include the JS files before `</body>`. You can ignore the jQuery if you already added it. Also change the path to fit your project directory.
+## How to Use
 
-	```html
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js/h-scroll.min.js"></script>
-	```
+Get the CSS and JS files from this repos's `/dist` directory.
 
-1. Apply hLightbox to anchor link. It will read the **href** attribute.
+```
+hLightbox( targets, [args] )
+```
 
-	```html
-	<a href="https://picsum.photos/600/450" class="open-lightbox">
-	  <img src="https://picsum.photos/400/300">
-	</a>
-	```
+- `targets` (Node / NodeList) - The link element to open the lightbox. **Must have HREF attribute.**
+- `args` (obj) - Optional - Possible arguments are:
 
-	```js
-	$('open-lightbox').hLightbox({
-	  closeButton: true,
-	});
-	```
+  - **closable** (bool) - Enable or disable closing lightbox when clicking outside. Default: true.
+	- **closeButton** (bool) - Show or hide close button. Default: false.
+	- **className** (string) - Space-separated classes to be added to the lightbox container. Default: ''.
+	- **onOpen** (fn) - Callback before lightbox is being opened. Parameters: `( instance )`.
+	- **onClose** (fn) - Callback before lightbox is being closed. Parameters: `( instance )`.
 
-## Options
 
-Available options for hSlider are:
+## Image Link
 
-- **closable** - Enable or disable closing lightbox when clicking outside. Default: true.
-- **closeButton** - Show or hide close button. Default: false.
-- **className** - Space-separated classes to be added to the lightbox container. Default: ''.
-- **onOpen** - Callback before lightbox is being opened. Parameters: `( instance )`.
-- **onClose** - Callback 	before lightbox is being closed. Parameters: `( instance )`.
+Triggered when the HREF attribute is URL that ends with jpg / jpeg / png / gif / svg.
 
-## Href Formats
+**EXAMPLE**
 
-The lightbox content is auto-detected from the format of `href` attribute. Here are the variations:
+```html
+<a href="/img/my-larger-image.jpg" class="my-image-link">
+  <img src="/img/my-thumbnail-image.jpg">
+</a>
+```
 
-1. **IMAGE** - If the Href is URL that ends with jpg / jpeg / png / gif / svg.
+```js
+document.addEventListener('DOMContentLoaded', () => {
 
-	```html
-	<a href="https://mysite.com/cute-cat.jpg"> Click here </a>
-	```
+  hLightbox( document.querySelectorAll('.my-image-link'), {
+    closeButton: true
+  } );
 
-1. **HTML TEMPLATE** - If the Href is an ID, look for the element with that ID and copy the content.
+});
+```
 
-	```html
-	<a href="#my-content"> Click here </a>
+## Template Link
 
-	<template id="my-content">
-	  <article>
-	    <h2>Hello World</h2>
-		  <p>Lorem ipsum dolor sit amet</p>
-	  </article>
-	</template>
-	```
+Triggered when the HREF attribute is ID. It will look for `<template>` with that ID.
 
-	We recommend using `<template>` tag and adds a single wrapper just like `<article>` above. You will then need to style that wrapper since we only add sizing-related CSS.
+**EXAMPLE**
 
-1. **IFRAME** - If the Href is URL that has `width` and `height` parameters, it will be shown inside iframe with that specified size.
+```html
+<a href="#template-readmore" class="my-template-link"> Read More </a>
 
-	```html
-	<a href="https://wikipedia.com?width=720&height=480"> Open Wikipedia </a>
-	```
+<template id="template-readmore">
+  <h1>Hello World</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Eos eveniet possimus architecto nisi dolor vel adipisci atque magni ut sequi.
+  </p>
+</template>
+```
+
+```js
+document.addEventListener('DOMContentLoaded', () => {
+
+  hLightbox( document.querySelectorAll('.my-template-link') );
+
+});
+```
+
+## Iframe Link
+
+Triggered when the HREF attribute is URL that has `width` and `height` parameters, it will be shown inside iframe with that specified size.
+
+```html
+<a href="https://wikipedia.com?width=720&height=480" class="my-iframe-link">
+	Open Wikipedia
+</a>
+```
+
+```js
+document.addEventListener('DOMContentLoaded', () => {
+
+  hLightbox( document.querySelectorAll('.my-iframe-link') );
+
+});
+```
 
 ## FAQ
 
@@ -94,14 +120,18 @@ The lightbox content is auto-detected from the format of `href` attribute. Here 
 
 	Currently this library doesn't support that.
 
-## Requirements
+-----
 
-hLightbox depends on **jQuery**. Tested working on version 1.12.4.
+### Requirements
 
-hLightbox also depends on the following browser features and APIs:
+hLightbox depends on the following browser features and APIs:
 
 - [Array.from](https://www.ecma-international.org/ecma-262/6.0/#sec-array.from)
 - [Object.assign](http://www.ecma-international.org/ecma-262/6.0/#sec-object.assign)
 - [requestAnimationFrame](https://www.w3.org/TR/animation-timing/#dom-windowanimationtiming-requestanimationframe)
 
 Some of these APIs are capable of being polyfilled in older browsers. Check the linked resources above to determine if you must polyfill to achieve your desired level of browser support.
+
+### Credit
+
+This is a fork of [basicSlider](https://github.com/electerious/basicSlider) with some added features. So big thanks to [Tobias Reich](https://github.com/electerious) for creating an awesome basis for this library.

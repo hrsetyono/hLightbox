@@ -1,12 +1,12 @@
 {
   "name": "hlightbox",
   "moduleName": "hLightbox",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "authors": [
     "Tobias Reich <tobias@electerious.com>",
     "Henner Setyono <henner@setyono.net>"
   ],
-  "description": "A Simple jQuery Lightbox, only 1.73KB gzipped",
+  "description": "A simple and flexible Lightbox / Popup, only 1.7KB gzipped",
   "main": "dist/hlightbox.min.js",
   "keywords": [
     "lightbox",
