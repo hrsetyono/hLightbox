@@ -10,8 +10,7 @@
   Create a popup when clicking an element
 
   @param targets (Node / NodeList) - lightbox link element, from querySelector()
-  @param args (obj) -  lightbox configuration
-
+  @param args (obj) - lightbox configuration
 */
 function hLightbox( targets, args = {} ) {
   if( !targets ) {

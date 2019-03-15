@@ -1,3 +1,7 @@
+## 2.1.0
+
+- Removed jQuery dependencies
+
 ## 2.0.1
 
 - Changed the CSS for lightbox container so the close button can be positioned next to the lightbox.

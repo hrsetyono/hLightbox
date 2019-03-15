@@ -1,8 +1,7 @@
 // hLightbox v2
 // https://github.com/hrsetyono/hLightbox
   
-@import "setting"
-@import "edje-v20"
+@import "settings"
 
 .hLightbox
   +h( fixed top0 left0 w100 h100vh )
@@ -22,14 +21,14 @@
 
 .hLightbox-content
   +h( absolute top50 left50 cursor-default events-all transition )
-  +transform( scale(0.9) translateX(-50%) translateY(-50%) )
+  transform: scale(0.9) translateX(-50%) translateY(-50%)
   z-index: 1
   will-change: transform
   max-width: 95%
   max-height: 95vh
 
   .hLightbox--visible &
-    +transform( scale(1) translateX(-50%) translateY(-50%) )
+    transform: scale(1) translateX(-50%) translateY(-50%)
 
   > *
     +h( ovy-auto )
@@ -52,7 +51,7 @@
   background-color: rgba($red, 0.3)
   font-size: 0
 
-  +transform( translateX(100%) )
+  transform: translateX(100%)
 
   &::before
     content: "✕"
