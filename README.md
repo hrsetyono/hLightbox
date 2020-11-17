@@ -38,10 +38,10 @@ hLightbox( targets, [args] )
 - `args` (obj) - Optional - Possible arguments are:
 
   - **closable** (bool) - Enable or disable closing lightbox when clicking outside. Default: true.
-	- **closeButton** (bool) - Show or hide close button. Default: false.
-	- **className** (string) - Space-separated classes to be added to the lightbox container. Default: ''.
-	- **onOpen** (fn) - Callback before lightbox is being opened. Parameters: `( instance )`.
-	- **onClose** (fn) - Callback before lightbox is being closed. Parameters: `( instance )`.
+  - **closeButton** (bool) - Show or hide close button. Default: false.
+  - **className** (string) - Space-separated classes to be added to the lightbox container. Default: ''.
+  - **onOpen** (fn) - Callback before lightbox is being opened. Parameters: `( instance )`.
+  - **onClose** (fn) - Callback before lightbox is being closed. Parameters: `( instance )`.
 
 
 ## Image Link
